@@ -1,0 +1,52 @@
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		$('#editUserPasswordCheck').keyup(function() {
+			var password1 = $('#editUserPassword').val();
+			var password2 = $('#editUserPasswordCheck').val();
+			if (password1 != null && password2 != null) {
+				if (password1 != password2) {
+					$("#checkMessage").text("비밀번호가 일치하지 않습니다.");
+					$('#checkMessage').attr('color', 'red');
+				} else {
+					$("#checkMessage").text("");
+				}
+			}
+		});
+		
+	});
+</script>
+<form id="editForm" onsubmit="return Edit();">
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td><input id="editUserId" type="text" name="userId" disabled /></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input id="editUserName" type="text" name="userName" /></td>
+		</tr>
+		<tr>
+			<td>생년원일</td>
+			<td><input id="editUserBirth" type="date" name="userBirth" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input id="editUserPassword" type="password"
+				name="userPassword" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td>
+			<td><input id="editUserPasswordCheck" type="password" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><font id="checkMessage"></font></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button type="submit" id="editbtn" >수정</button></td>
+		</tr>
+	</table>
+</form>

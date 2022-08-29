@@ -1,0 +1,5 @@
+function news() {
+	$.ajax({
+		url : "/"
+	})
+}
